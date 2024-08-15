@@ -9,7 +9,7 @@ class WorkSessionExport extends \Backend\Models\ExportModel
 
         foreach ($workSessions as &$workSession) {
             $workSession->worker_name = $workSession->worker->name;
-            $workSession->company_name = $workSession->worker->company->name;
+            $workSession->company_name = $workSession->worker?->company?->name;
         
             // Format check_in_time and check_out_time to a more user-friendly format directly
             if ($workSession->check_in_time) {

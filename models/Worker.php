@@ -25,7 +25,6 @@ class Worker extends Model
      * @var array rules for validation.
      */
     public $rules = [
-        'company' => 'required',
         'code' => 'required'
     ];
 

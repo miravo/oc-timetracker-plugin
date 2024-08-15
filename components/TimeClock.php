@@ -33,11 +33,14 @@ class TimeClock extends ComponentBase
     }
 
     public function prepareVars($worker) {
+        
+        $workSessionHistoryItemsPerPage = $this->property('workSessionHistoryItemsPerPage') ?? 5; 
+        $this->page['refreshDelayInSeconds'] = $this->property('refreshDelayInSeconds');
         $this->page['initialLoading'] = isset($_POST['login']) ? false : true;
         $this->page['worker'] = $worker;
         $this->page['company'] = $worker?->company;
         $this->page['lastWorkSession'] = $worker?->workSessions()->whereDate('check_in_time', Carbon::today())->latest()->first();
-        $this->page['workSessions'] = $worker?->workSessions()->orderBy('created_at', 'desc')->paginate(5); // 5 items per page
+        $this->page['workSessions'] = $worker?->workSessions()->orderBy('created_at', 'desc')->paginate($workSessionHistoryItemsPerPage);
     }
 
     public function onSearch() {

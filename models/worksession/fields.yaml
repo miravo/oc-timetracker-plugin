@@ -1,0 +1,15 @@
+fields:
+    worker:
+        label: Worker
+        span: auto
+        type: relation
+        placeholder: Select a worker
+    check_in_time:
+        label: Check in time
+        mode: datetime
+        span: left
+        type: datepicker
+    check_out_time:
+        label: Check out time
+        span: auto
+        type: datepicker

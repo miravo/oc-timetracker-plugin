@@ -1,0 +1,34 @@
+columns:
+    name:
+        label: Name
+        type: text
+        searchable: true
+        sortable: true
+    address:
+        label: Address
+        type: text
+        searchable: true
+        sortable: true
+    contact_person:
+        label: Primary Contact Person Name
+        type: text
+        searchable: true
+        sortable: true
+    contact_email:
+        label: Primary Contact Person Email Address
+        type: text
+        searchable: true
+        sortable: true
+    contact_phone:
+        label: Primary Contact Person Phone Number
+        type: text
+        searchable: true
+        sortable: true
+    created_at:
+        label: Created at
+        type: datetime
+        sortable: true
+    updated_at:
+        label: Updated at
+        type: datetime
+        sortable: true

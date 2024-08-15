@@ -1,0 +1,67 @@
+{% if worker %}
+    <div class="card p-4">
+        <h5 class="text-center mb-3">{{ 'Punch In/Out'|transComp }}</h5>
+
+        <!-- Person's Details and Last Punch Information using a Table -->
+        <table class="table borderless mb-3">
+            <tbody>
+                <tr>
+                    <td class="text-right"><strong>{{ 'Full Name:'|transComp }}</strong></td>
+                    <td class="text-left">{{ worker.first_name }} {{ worker.last_name }}</td>
+                </tr>
+                <tr>
+                    <td class="text-right"><strong>{{ 'Company:'|transComp }}</strong></td>
+                    <td class="text-left">{{ company.name }}</td>
+                </tr>
+                {% if lastWorkSession.check_in_time and not lastWorkSession.check_out_time %}
+                    <tr>
+                        <td class="text-right"><strong>{{ 'Current Session Start:'|transComp }}</strong></td>
+                        <td class="text-left">
+                            {{ lastWorkSession.check_in_time|date('H:i A, F j, Y') }}
+                            <small class="text-muted">({{ lastWorkSession.check_in_time_human }})</small>
+                        </td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+
+        <!-- Punch In/Out Buttons -->
+        <div class="d-flex justify-content-center gap-3 mt-2">
+            {% if not lastWorkSession or (lastWorkSession.check_in_time and lastWorkSession.check_out_time) %}
+                <button class="btn btn-success rounded-1" data-request="onPunch" data-request-update="'timeClock::controls': '#controls'" data-request-flash data-request-loading="#loading-indicator" data-request-success="setTimeout(function() { location.reload(); }, 5000);">{{ 'Punch In'|transComp }}</button>
+            {% endif %}
+            
+            {% if lastWorkSession and lastWorkSession.check_in_time and not lastWorkSession.check_out_time %}
+                <button class="btn btn-danger rounded-1" data-request="onPunch" data-request-update="'timeClock::controls': '#controls'" data-request-flash data-request-loading="#loading-indicator" data-request-success="setTimeout(function() { location.reload(); }, 5000);">{{ 'Punch Out'|transComp }}</button>
+            {% endif %}
+        </div>
+    </div>
+    <!-- Work Session History -->
+    <div class="card mt-4 p-4">
+        <h5 class="text-center mb-3">{{ 'Punch History'|transComp }}</h5>
+            {% ajaxPartial __SELF__ ~ '::historyworksessions' %}
+    </div>
+    <!-- Now that the Worker information is displayed, set a delay before refreshing the page to account for user inactivity. -->
+    <script>
+        $(document).ready(function() {
+            const refreshTime = 30000; // 30 seconds of inactivity
+            let lastActivityTime = Date.now();
+
+            function resetTimer() {
+                lastActivityTime = Date.now();
+            }
+
+            function checkInactivity() {
+                if (Date.now() - lastActivityTime >= refreshTime) {
+                    location.reload();
+                }
+            }
+
+            // Attach event handlers to track user activity, including scrolling
+            $(document).on('mousemove keypress click touchstart scroll', resetTimer);
+
+            // Check for inactivity every second
+            setInterval(checkInactivity, 1000);
+        });
+    </script>
+{% endif %}

@@ -1,0 +1,39 @@
+columns:
+    first_name:
+        label: First name
+        type: text
+        searchable: true
+        sortable: true
+    last_name:
+        label: Last name
+        type: text
+        searchable: true
+        sortable: true
+    code: 
+        label: Code
+        type: text
+        searchable: true
+    email:
+        label: Email
+        type: text
+        searchable: true
+        sortable: true
+    phone:
+        label: Phone
+        type: text
+        searchable: true
+        sortable: true
+    company[name]:
+        label: Company
+        type: text
+        searchable: false
+    created_at:
+        label: Created at
+        type: datetime
+        searchable: false
+        sortable: true
+    updated_at:
+        label: Updated at
+        type: datetime
+        searchable: false
+        sortable: true

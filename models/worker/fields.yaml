@@ -1,0 +1,28 @@
+fields:
+    company:
+        label: Company
+        span: auto
+        type: relation
+        placeholder: Please select a company
+    code:
+        label: Code
+        span: auto
+        type: text
+    first_name:
+        label: First name
+        span: auto
+        type: text
+    last_name:
+        label: Last name
+        span: auto
+        type: text
+    email:
+        label: Email
+        span: auto
+        type: email
+    phone:
+        label: Phone
+        span: auto
+        type: text
+    workSessions@update:
+        type: relation

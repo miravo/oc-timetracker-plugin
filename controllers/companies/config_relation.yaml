@@ -1,0 +1,8 @@
+workers:
+    label: Workers
+    manage:
+        form: $/miravo/timetracker/models/worker/fields.yaml
+        list: $/miravo/timetracker/models/worker/columns.yaml
+    view:
+        list: $/miravo/timetracker/models/worker/columns.yaml
+        toolbarButtons: create|delete

@@ -1,0 +1,10 @@
+name: Companies
+form: $/miravo/timetracker/models/company/fields.yaml
+modelClass: Miravo\Timetracker\Models\Company
+defaultRedirect: miravo/timetracker/companies
+create:
+    redirect: 'miravo/timetracker/companies/update/:id'
+    redirectClose: miravo/timetracker/companies
+update:
+    redirect: miravo/timetracker/companies
+    redirectClose: miravo/timetracker/companies

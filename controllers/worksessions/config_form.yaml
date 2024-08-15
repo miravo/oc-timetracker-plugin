@@ -1,0 +1,10 @@
+name: WorkSessions
+form: $/miravo/timetracker/models/worksession/fields.yaml
+modelClass: Miravo\Timetracker\Models\WorkSession
+defaultRedirect: miravo/timetracker/worksessions
+create:
+    redirect: 'miravo/timetracker/worksessions/update/:id'
+    redirectClose: miravo/timetracker/worksessions
+update:
+    redirect: miravo/timetracker/worksessions
+    redirectClose: miravo/timetracker/worksessions

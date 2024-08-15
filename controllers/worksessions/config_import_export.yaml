@@ -1,0 +1,6 @@
+export:
+    title: Export worksessions
+    modelClass: Miravo\Timetracker\Models\WorkSessionExport
+    list: $/miravo/timetracker/models/worksession/columns_export.yaml
+defaultFormatOptions:
+    fileFormat: csv

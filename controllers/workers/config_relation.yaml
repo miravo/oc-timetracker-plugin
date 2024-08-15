@@ -1,0 +1,11 @@
+workSessions:
+    label: WorkSessions
+    manage:
+        form: $/miravo/timetracker/models/workSession/fields.yaml
+        list: $/miravo/timetracker/models/workSession/columns.yaml
+    view:
+        list: $/miravo/timetracker/models/workSession/columns.yaml
+        toolbarButtons: create|delete
+        defaultSort:
+            column: created_at
+            direction: desc

@@ -1,0 +1,16 @@
+v1.0.1: 'First version of timetracker'
+v1.0.2:
+    - 'Created table miravo_timetracker_companies'
+    - builder_table_create_miravo_timetracker_companies.php
+v1.0.3:
+    - 'Created table miravo_timetracker_workers'
+    - builder_table_create_miravo_timetracker_workers.php
+v1.0.4:
+    - 'Created table miravo_timetracker_worksessions'
+    - builder_table_create_miravo_timetracker_worksessions.php
+v1.0.5:
+    - 'Added Code field to miravo_timetracker_workers'
+    - update_miravo_timetracker_workers_1.php
+v1.0.6:
+    - 'Updated table miravo_timetracker_worksessions'
+    - builder_table_update_miravo_timetracker_worksessions.php

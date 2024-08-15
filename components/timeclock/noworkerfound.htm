@@ -1,0 +1,5 @@
+{% if not initialLoading and worker is null %}
+    <div class="alert alert-warning" role="alert">
+        {{ 'No worker found!'|transComp }}
+    </div>
+{% endif %}

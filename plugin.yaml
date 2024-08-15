@@ -1,0 +1,45 @@
+plugin:
+    name: TimeTracker
+    description: 'Used for timetracking'
+    author: Miravo
+    icon: oc-icon-clock
+    homepage: ''
+navigation:
+    timetracker:
+        label: TimeTracker
+        url: /
+        icon: icon-clock-o
+        permissions:
+            - miravo.timetracker
+        sideMenu:
+            workers:
+                label: Workers
+                url: miravo/timetracker/workers
+                icon: icon-users
+                permissions:
+                    - miravo.timetracker.can_manage_workers
+            worksessions:
+                label: WorkSessions
+                url: miravo/timetracker/worksessions
+                icon: icon-tasks
+                permissions:
+                    - miravo.timetracker.can_manage_worksessions
+            companies:
+                label: Companies
+                url: miravo/timetracker/companies
+                icon: icon-building
+                permissions:
+                    - miravo.timetracker.manage_companies
+permissions:
+    miravo.timetracker:
+        tab: TimeTracker
+        label: Can View TimeTracker Menu
+    miravo.timetracker.can_manage_workers:
+        tab: TimeTracker
+        label: Can Manage Workers
+    miravo.timetracker.can_manage_worksessions:
+        tab: TimeTracker
+        label: Can Manage WorkSessions
+    miravo.timetracker.manage_companies:
+        tab: TimeTracker
+        label: Can Manage Companies

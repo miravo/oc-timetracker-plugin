@@ -1,0 +1,21 @@
+<form>
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 px-5">
+                <!-- Search Section -->
+                <div id="search">
+                    {% partial __SELF__ ~ '::search' %}
+                </div>
+                <!-- No Worker Found -->
+                <div id="noworkerfound">
+                    {% partial __SELF__ ~ '::noworkerfound' %}
+                </div>
+                <!-- Punch In/Out Section -->
+                <div id="controls">
+                    {% partial __SELF__ ~ '::controls' %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% ajaxPartial __SELF__ ~ '::loadingindicator' %}
+</form>

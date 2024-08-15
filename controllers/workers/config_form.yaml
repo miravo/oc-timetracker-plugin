@@ -1,0 +1,10 @@
+name: Workers
+form: $/miravo/timetracker/models/worker/fields.yaml
+modelClass: Miravo\Timetracker\Models\Worker
+defaultRedirect: miravo/timetracker/workers
+create:
+    redirect: 'miravo/timetracker/workers/update/:id'
+    redirectClose: miravo/timetracker/workers
+update:
+    redirect: miravo/timetracker/workers
+    redirectClose: miravo/timetracker/workers

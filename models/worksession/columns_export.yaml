@@ -1,0 +1,20 @@
+columns:
+    id:
+        label: ID
+    worker_name:
+        label: Worker name
+        type: text
+    company_name:
+        label: Worker company name
+        type: text
+    check_in_time_formatted:
+        label: Check in time
+        type: text
+    check_out_time_formatted:
+        label: Check out time
+        type: text
+    duration:
+        label: Duration
+        type: text
+    is_error:
+        label: Error

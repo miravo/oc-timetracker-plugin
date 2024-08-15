@@ -1,0 +1,25 @@
+fields:
+    name:
+        label: Name
+        span: auto
+        type: text
+    address:
+        label: Address
+        span: auto
+        type: text
+    contact_person:
+        label: Primary Contact Person Name
+        span: auto
+        type: text
+    contact_email:
+        label: Primary Contact Person Email Address
+        span: auto
+        type: email
+    contact_phone:
+        label: Primary Contact Person Phone Number
+        span: auto
+        type: text
+    workers@update:
+        label: Workers
+        type: relation
+

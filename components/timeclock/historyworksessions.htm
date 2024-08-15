@@ -1,0 +1,40 @@
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">{{ 'Check In'|transComp }}</th>
+                <th scope="col">{{ 'Check Out'|transComp }}</th>
+                <th scope="col">{{ 'Duration'|transComp }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for session in workSessions %}
+                <tr>
+                    <td>{{ session.check_in_time ? session.check_in_time|date('H:i A, F j, Y') : 'N/A'|transComp }}</td>
+                    <td>{{ session.check_out_time ? session.check_out_time|date('H:i A, F j, Y') : 'N/A'|transComp }}</td>
+                    <td>
+                        {% if session.check_in_time and session.check_out_time %}
+                            {% set total_seconds = session.check_out_time|date('U') - session.check_in_time|date('U') %}
+                            {% set hours = (total_seconds // 3600) %}
+                            {% set minutes = (total_seconds % 3600) // 60 %}
+                            {% set seconds = (total_seconds % 60) %}
+                            {{ '%02d:%02d:%02d'|format(hours, minutes, seconds) }}
+                        {% else %}
+                            {{ 'N/A'|transComp }}
+                        {% endif %}
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="3" class="text-center">{{ 'No work sessions available.'|transComp }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div class="d-flex justify-content-center pt-3">
+    <nav>
+        {{ ajaxPager(workSessions) }}
+    </nav>
+</div>

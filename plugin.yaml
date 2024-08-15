@@ -1,6 +1,6 @@
 plugin:
     name: TimeTracker
-    description: 'Used for timetracking'
+    description: A versatile tool for tracking work sessions across various environments
     author: Miravo
     icon: oc-icon-clock
     homepage: ''

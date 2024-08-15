@@ -1,7 +1,7 @@
 {
     "name": "miravo/timetracker-plugin",
     "type": "october-plugin",
-    "description": "No description provided yet...",
+    "description": "The Worker Time Tracker plugin logs worker hours, links them to tasks or companies, and generates reports for accurate timekeeping and productivity.",
     "require": {
         "composer/installers": "~1.0"
     }

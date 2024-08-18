@@ -16,6 +16,6 @@
     <a
         href="<?= Backend::url('miravo/timetracker/worksessions/export') ?>"
         class="btn btn-default oc-icon-download">
-        <?= \Miravo\Timetracker\Classes\TranslateHelper::string('Export Records'); ?>
+        <?= e(trans('miravo.timetracker::lang.export_records')) ?>
     </a>
 </div>

@@ -1,27 +1,27 @@
 fields:
     company:
-        label: Company
+        label: miravo.timetracker::lang.company
         span: auto
         type: relation
-        placeholder: Please select a company
+        placeholder: miravo.timetracker::lang.please_select_a_company
     code:
-        label: Code
+        label: miravo.timetracker::lang.code
         span: auto
         type: text
     first_name:
-        label: First name
+        label: miravo.timetracker::lang.first_name
         span: auto
         type: text
     last_name:
-        label: Last name
+        label: miravo.timetracker::lang.last_name
         span: auto
         type: text
     email:
-        label: Email
+        label: miravo.timetracker::lang.email
         span: auto
         type: email
     phone:
-        label: Phone
+        label: miravo.timetracker::lang.phone
         span: auto
         type: text
     workSessions@update:

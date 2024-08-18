@@ -1,34 +1,34 @@
 columns:
     name:
-        label: Name
+        label: miravo.timetracker::lang.name
         type: text
         searchable: true
         sortable: true
     address:
-        label: Address
+        label: miravo.timetracker::lang.address
         type: text
         searchable: true
         sortable: true
     contact_person:
-        label: Primary Contact Person Name
+        label: miravo.timetracker::lang.primary_contact_person_name
         type: text
         searchable: true
         sortable: true
     contact_email:
-        label: Primary Contact Person Email Address
+        label: miravo.timetracker::lang.primary_contact_person_email_address
         type: text
         searchable: true
         sortable: true
     contact_phone:
-        label: Primary Contact Person Phone Number
+        label: miravo.timetracker::lang.primary_contact_person_phone_number
         type: text
         searchable: true
         sortable: true
     created_at:
-        label: Created at
+        label: miravo.timetracker::lang.created_at
         type: datetime
         sortable: true
     updated_at:
-        label: Updated at
+        label: miravo.timetracker::lang.updated_at
         type: datetime
         sortable: true

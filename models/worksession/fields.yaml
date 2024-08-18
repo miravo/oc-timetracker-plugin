@@ -1,15 +1,15 @@
 fields:
     worker:
-        label: Worker
+        label: miravo.timetracker::lang.worker
         span: auto
         type: relation
-        placeholder: Select a worker
+        placeholder: miravo.timetracker::lang.select_a_worker
     check_in_time:
-        label: Check in time
+        label: miravo.timetracker::lang.check_in_time
         mode: datetime
         span: left
         type: datepicker
     check_out_time:
-        label: Check out time
+        label: miravo.timetracker::lang.check_out_time
         span: auto
         type: datepicker

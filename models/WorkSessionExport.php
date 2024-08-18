@@ -3,9 +3,50 @@
 class WorkSessionExport extends \Backend\Models\ExportModel
 {
 
+    protected $fillable = [
+        'from_date', 'to_date', 'companies', 'workers'
+    ];
+
+    public function getCompaniesOptions() {
+        return Company::all()->sortBy('name')->pluck('name', 'id')->toArray();
+    }
+
+    public function getWorkersOptions() {
+        if ($this->companies) {
+            // Assuming $this->companies is an array of company IDs
+            return Worker::whereIn('company_id', $this->companies)
+                     ->orderBy('first_name')
+                     ->get()
+                     ->pluck('name', 'id')
+                     ->toArray();
+        }
+    
+        return Worker::all()->sortBy('first_name')->pluck('name', 'id')->toArray();
+    }
+
     public function exportData($columns, $sessionKey = null)
     {
-        $workSessions = WorkSession::all();
+
+        $workSessions = WorkSession::query();
+
+        if ($fromDate = $this->from_date) {
+            // Set the time to the start of the day
+            $startOfDay = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $fromDate)->startOfDay();
+            $workSessions->where('check_in_time', '>=', $startOfDay);
+        }
+
+        if ($toDate = $this->to_date) {
+            // Set the time to the end of the day
+            $endOfDay = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $toDate)->endOfDay();
+            $workSessions->where('check_out_time', '<=', $endOfDay);
+        }
+
+        if ($workers = $this->workers) {
+            $workSessions->whereIn('worker_id', $workers);
+        }
+
+        $workSessions = $workSessions->get();
+
 
         foreach ($workSessions as &$workSession) {
             $workSession->worker_name = $workSession->worker->name;

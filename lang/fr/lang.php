@@ -45,5 +45,9 @@
     'worksessions' => 'Sessions de travail',
     'punched_in_success' => 'Vous avez enregistré votre entrée avec succès',
     'punched_out_success' => 'Vous avez enregistré votre sortie avec succès',
+    'timetracker' => 'TimeTracker',
+    'can_view_timetracker_menu' => 'Peut voir le menu (TimeTracker)',
+    'can_manage_workers' => 'Peut gérer les travailleurs',
+    'can_manage_worksessions' => 'Peut gérer les sessions de travail',
+    'can_manage_companies' => 'Peut gérer les entreprises',
 ];
-

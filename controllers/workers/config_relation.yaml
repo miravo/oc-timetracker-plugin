@@ -1,5 +1,5 @@
 workSessions:
-    label: WorkSessions
+    label: miravo.timetracker::lang.worksessions
     manage:
         form: $/miravo/timetracker/models/workSession/fields.yaml
         list: $/miravo/timetracker/models/workSession/columns.yaml

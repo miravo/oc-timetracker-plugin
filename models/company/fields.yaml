@@ -1,25 +1,24 @@
 fields:
     name:
-        label: Name
+        label: miravo.timetracker::lang.name
         span: auto
         type: text
     address:
-        label: Address
+        label: miravo.timetracker::lang.address
         span: auto
         type: text
     contact_person:
-        label: Primary Contact Person Name
+        label: miravo.timetracker::lang.primary_contact_person_name
         span: auto
         type: text
     contact_email:
-        label: Primary Contact Person Email Address
+        label: miravo.timetracker::lang.primary_contact_person_email_address
         span: auto
         type: email
     contact_phone:
-        label: Primary Contact Person Phone Number
+        label: miravo.timetracker::lang.primary_contact_person_phone_number
         span: auto
         type: text
     workers@update:
-        label: Workers
+        label: miravo.timetracker::lang.workers
         type: relation
-

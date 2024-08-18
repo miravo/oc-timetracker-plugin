@@ -1,23 +1,23 @@
 {% if worker %}
     <div class="card p-4">
-        <h5 class="text-center mb-3">{{ 'Punch In/Out'|transComp }}</h5>
+        <h5 class="text-center mb-3">{{ 'miravo.timetracker::lang.punch_in_out'|trans }}</h5>
 
         <!-- Person's Details and Last Punch Information using a Table -->
         <table class="table borderless mb-3">
             <tbody>
                 <tr>
-                    <td class="text-right"><strong>{{ 'Full Name:'|transComp }}</strong></td>
+                    <td class="text-right"><strong>{{ 'miravo.timetracker::lang.full_name'|trans }} :</strong></td>
                     <td class="text-left">{{ worker.first_name }} {{ worker.last_name }}</td>
                 </tr>
                 {% if company is not null %}
                     <tr>
-                        <td class="text-right"><strong>{{ 'Company:'|transComp }}</strong></td>
+                        <td class="text-right"><strong>{{ 'miravo.timetracker::lang.company'|trans }} :</strong></td>
                         <td class="text-left">{{ company.name }}</td>
                     </tr>
                 {% endif %}
                 {% if lastWorkSession.check_in_time and not lastWorkSession.check_out_time %}
                     <tr>
-                        <td class="text-right"><strong>{{ 'Current Session Start:'|transComp }}</strong></td>
+                        <td class="text-right"><strong>{{ 'miravo.timetracker::lang.current_session_start'|trans }}</strong></td>
                         <td class="text-left">
                             {{ lastWorkSession.check_in_time|date('H:i A, F j, Y') }}
                             <small class="text-muted">({{ lastWorkSession.check_in_time_human }})</small>
@@ -30,17 +30,17 @@
         <!-- Punch In/Out Buttons -->
         <div class="d-flex justify-content-center gap-3 mt-2">
             {% if not lastWorkSession or (lastWorkSession.check_in_time and lastWorkSession.check_out_time) %}
-                <button class="btn btn-success rounded-1" data-request="onPunch" data-request-update="'timeClock::controls': '#controls'" data-request-flash data-request-loading="#loading-indicator">{{ 'Punch In'|transComp }}</button>
+                <button class="btn btn-success rounded-1" data-request="onPunch" data-request-update="'timeClock::controls': '#controls'" data-request-flash data-request-loading="#loading-indicator">{{ 'miravo.timetracker::lang.punch_in'|trans }}</button>
             {% endif %}
             
             {% if lastWorkSession and lastWorkSession.check_in_time and not lastWorkSession.check_out_time %}
-                <button class="btn btn-danger rounded-1" data-request="onPunch" data-request-update="'timeClock::controls': '#controls'" data-request-flash data-request-loading="#loading-indicator">{{ 'Punch Out'|transComp }}</button>
+                <button class="btn btn-danger rounded-1" data-request="onPunch" data-request-update="'timeClock::controls': '#controls'" data-request-flash data-request-loading="#loading-indicator">{{ 'miravo.timetracker::lang.punch_out'|trans }}</button>
             {% endif %}
         </div>
     </div>
     <!-- Work Session History -->
     <div class="card mt-4 p-4">
-        <h5 class="text-center mb-3">{{ 'Punch History'|transComp }}</h5>
+        <h5 class="text-center mb-3">{{ 'miravo.timetracker::lang.punch_history'|trans }}</h5>
             {% ajaxPartial __SELF__ ~ '::historyworksessions' %}
     </div>
     <!-- Now that the Worker information is displayed, set a delay before refreshing the page to account for user inactivity. -->

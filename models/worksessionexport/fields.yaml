@@ -1,0 +1,23 @@
+fields:
+  from_date:
+    label: miravo.timetracker::lang.from_date
+    type: datepicker
+    mode: date
+    span: left
+    changeHandler: onChangeContent
+  to_date:
+    label: miravo.timetracker::lang.to_date
+    type: datepicker
+    mode: date
+    span: right
+    changeHandler: onChangeContent
+  companies:
+    label: miravo.timetracker::lang.companies
+    type: checkboxlist
+    quickselect: true
+  workers:
+    label: miravo.timetracker::lang.workers
+    type: checkboxlist
+    quickselect: true
+    dependsOn:
+      - companies

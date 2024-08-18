@@ -1,7 +1,7 @@
 <div class="card p-4 mb-4">
-    <h4 class="text-center mb-3">{{ 'Identification' }}</h4>
+    <h4 class="text-center mb-3">{{ 'miravo.timetracker::lang.identification'|trans }}</h4>
     <div class="input-group mb-3">
-        <input type="text" class="form-control" name="login" placeholder="{{ 'Enter your code'|transComp }}" aria-label="Login">
+        <input type="text" class="form-control" name="login" placeholder="{{ 'miravo.timetracker::lang.enter_your_code'|trans }}" aria-label="Login">
     </div>
-    <button class="btn btn-warning w-100 rounded-1" data-request="onSearch" data-request-update="'timeClock::controls': '#controls','timeClock::noworkerfound': '#noworkerfound'" data-request-loading="#loading-indicator">{{ 'Search'|transComp }}</button>
+    <button class="btn btn-warning w-100 rounded-1" data-request="onSearch" data-request-update="'timeClock::controls': '#controls','timeClock::noworkerfound': '#noworkerfound'" data-request-loading="#loading-indicator">{{ 'miravo.timetracker::lang.search'|trans }}</button>
 </div>

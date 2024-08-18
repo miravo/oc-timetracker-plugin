@@ -1,4 +1,4 @@
-name: Workers
+name: miravo.timetracker::lang.workers
 form: $/miravo/timetracker/models/worker/fields.yaml
 modelClass: Miravo\Timetracker\Models\Worker
 defaultRedirect: miravo/timetracker/workers

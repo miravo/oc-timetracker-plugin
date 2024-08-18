@@ -1,19 +1,19 @@
 columns:
     worker[name]:
-        label: Worker name
+        label: miravo.timetracker::lang.worker_name
         type: text
     worker[company][name]:
-        label: Worker company name
+        label: miravo.timetracker::lang.worker_company_name
         type: text
     check_in_time:
-        label: Check in time
+        label: miravo.timetracker::lang.check_in_time
         type: text
     check_out_time:
-        label: Check out time
+        label: miravo.timetracker::lang.check_out_time
         type: text
     created_at:
-        label: Created at
+        label: miravo.timetracker::lang.created_at
         type: datetime
     updated_at:
-        label: Updated at
+        label: miravo.timetracker::lang.updated_at
         type: datetime

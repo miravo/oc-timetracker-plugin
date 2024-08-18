@@ -1,39 +1,39 @@
 columns:
     first_name:
-        label: First name
+        label: miravo.timetracker::lang.first_name
         type: text
         searchable: true
         sortable: true
     last_name:
-        label: Last name
+        label: miravo.timetracker::lang.last_name
         type: text
         searchable: true
         sortable: true
     code: 
-        label: Code
+        label: miravo.timetracker::lang.code
         type: text
         searchable: true
     email:
-        label: Email
+        label: miravo.timetracker::lang.email
         type: text
         searchable: true
         sortable: true
     phone:
-        label: Phone
+        label: miravo.timetracker::lang.phone
         type: text
         searchable: true
         sortable: true
     company[name]:
-        label: Company
+        label: miravo.timetracker::lang.company
         type: text
         searchable: false
     created_at:
-        label: Created at
+        label: miravo.timetracker::lang.created_at
         type: datetime
         searchable: false
         sortable: true
     updated_at:
-        label: Updated at
+        label: miravo.timetracker::lang.updated_at
         type: datetime
         searchable: false
         sortable: true

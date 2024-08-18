@@ -3,7 +3,7 @@
 use Cms\Classes\ComponentBase;
 use Miravo\Timetracker\Models\{Worker, WorkerSession, Company};
 use Carbon\Carbon;
-use Miravo\Timetracker\Classes\TranslateHelper;
+use Lang;
 
 /**
  * TimeClock Component
@@ -70,7 +70,8 @@ class TimeClock extends ComponentBase
                     'check_in_time' => now(),
                     'is_error' => 0, // Mark this new session as correct
                 ]);
-                \Flash::success(TranslateHelper::string('You have successfully punched in.'));
+
+                \Flash::success(Lang::get('miravo.timetracker::lang.punched_in_success'));
     
             } elseif ($todaysWorkSession && !$todaysWorkSession->check_out_time) {
                 // A session from today exists but check_out_time is not set (the worker has checked in but not out)
@@ -80,7 +81,7 @@ class TimeClock extends ComponentBase
                     'is_error' => 0, // Mark this session as correct
                 ]);
     
-                \Flash::success(TranslateHelper::string('You have successfully punched out.'));
+                \Flash::success(Lang::get('miravo.timetracker::lang.punched_out_success'));
             }
         }
         $this->prepareVars($this->getWorker());

@@ -37,13 +37,4 @@ class Plugin extends PluginBase
         ];
     }
 
-    public function registerMarkupTags()
-    {
-        return [
-            'filters' => [
-                'transComp' => [\Miravo\TimeTracker\Classes\TranslateHelper::class, 'string']
-            ],
-        ];
-    }
-
 }

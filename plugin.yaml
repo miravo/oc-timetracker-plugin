@@ -13,19 +13,19 @@ navigation:
             - miravo.timetracker
         sideMenu:
             workers:
-                label: Workers
+                label: miravo.timetracker::lang.workers
                 url: miravo/timetracker/workers
                 icon: icon-users
                 permissions:
                     - miravo.timetracker.can_manage_workers
             worksessions:
-                label: WorkSessions
+                label: miravo.timetracker::lang.worksessions
                 url: miravo/timetracker/worksessions
                 icon: icon-tasks
                 permissions:
                     - miravo.timetracker.can_manage_worksessions
             companies:
-                label: Companies
+                label: miravo.timetracker::lang.companies
                 url: miravo/timetracker/companies
                 icon: icon-building
                 permissions:
@@ -33,13 +33,13 @@ navigation:
 permissions:
     miravo.timetracker:
         tab: TimeTracker
-        label: Can View TimeTracker Menu
+        label: miravo.timetracker::lang.can_view_timetracker_menu
     miravo.timetracker.can_manage_workers:
         tab: TimeTracker
-        label: Can Manage Workers
+        label: miravo.timetracker::lang.can_manage_workers
     miravo.timetracker.can_manage_worksessions:
         tab: TimeTracker
-        label: Can Manage WorkSessions
+        label: miravo.timetracker::lang.can_manage_worksessions
     miravo.timetracker.manage_companies:
         tab: TimeTracker
-        label: Can Manage Companies
+        label: miravo.timetracker::lang.can_manage_companies

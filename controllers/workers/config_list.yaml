@@ -1,6 +1,6 @@
 list: $/miravo/timetracker/models/worker/columns.yaml
 modelClass: Miravo\Timetracker\Models\Worker
-title: Workers
+title: 'miravo.timetracker::lang.workers'
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true
 showCheckboxes: true

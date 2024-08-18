@@ -2,16 +2,16 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th scope="col">{{ 'Check In'|transComp }}</th>
-                <th scope="col">{{ 'Check Out'|transComp }}</th>
-                <th scope="col">{{ 'Duration'|transComp }}</th>
+                <th scope="col">{{ 'miravo.timetracker::lang.check_in'|trans }}</th>
+                <th scope="col">{{ 'miravo.timetracker::lang.check_out'|trans }}</th>
+                <th scope="col">{{ 'miravo.timetracker::lang.duration'|trans }}</th>
             </tr>
         </thead>
         <tbody>
             {% for session in workSessions %}
                 <tr>
-                    <td>{{ session.check_in_time ? session.check_in_time|date('H:i A, F j, Y') : 'N/A'|transComp }}</td>
-                    <td>{{ session.check_out_time ? session.check_out_time|date('H:i A, F j, Y') : 'N/A'|transComp }}</td>
+                    <td>{{ session.check_in_time ? session.check_in_time|date('H:i A, F j, Y') : 'miravo.timetracker::lang.na'|trans }}</td>
+                    <td>{{ session.check_out_time ? session.check_out_time|date('H:i A, F j, Y') : 'miravo.timetracker::lang.na'|trans }}</td>
                     <td>
                         {% if session.check_in_time and session.check_out_time %}
                             {% set total_seconds = session.check_out_time|date('U') - session.check_in_time|date('U') %}
@@ -20,13 +20,13 @@
                             {% set seconds = (total_seconds % 60) %}
                             {{ '%02d:%02d:%02d'|format(hours, minutes, seconds) }}
                         {% else %}
-                            {{ 'N/A'|transComp }}
+                            {{ 'miravo.timetracker::lang.na'|trans }}
                         {% endif %}
                     </td>
                 </tr>
             {% else %}
                 <tr>
-                    <td colspan="3" class="text-center">{{ 'No work sessions available.'|transComp }}</td>
+                    <td colspan="3" class="text-center">{{ 'miravo.timetracker::lang.no_work_sessions_available'|trans }}</td>
                 </tr>
             {% endfor %}
         </tbody>

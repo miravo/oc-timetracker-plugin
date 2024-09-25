@@ -49,25 +49,25 @@
             // Retrieve the refresh delay from the data attribute
             const refreshDelayInSeconds = $('#refresh-config').data('refresh-delay');
             let lastActivityTime = Date.now();
-    
+
             function resetTimer() {
                 lastActivityTime = Date.now();
             }
-    
+
             function checkInactivity() {
                 if (Date.now() - lastActivityTime >= refreshDelayInSeconds * 1000) {
                     location.reload();
                 }
             }
-    
-            // Attach event handlers to track user activity, including scrolling
-            $(document).on('mousemove keypress click touchstart scroll', resetTimer);
-    
-            // Only set up the inactivity check if refreshDelayInSeconds is not null or empty
-            if (refreshDelayInSeconds) {
+
+            // Attach event handlers to track user activity, including touch events for tablets
+            $(document).on('mousemove keypress click touchstart touchmove touchend scroll', resetTimer);
+
+            // Only set up the inactivity check if refreshDelayInSeconds is valid
+            if (refreshDelayInSeconds && !isNaN(refreshDelayInSeconds)) {
                 // Check for inactivity every second
                 setInterval(checkInactivity, 1000);
             }
         });
-    </script>    
+    </script>
 {% endif %}

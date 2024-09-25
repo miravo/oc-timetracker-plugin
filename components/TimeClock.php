@@ -40,7 +40,7 @@ class TimeClock extends ComponentBase
         $this->page['worker'] = $worker;
         $this->page['company'] = $worker?->company;
         $this->page['lastWorkSession'] = $worker?->workSessions()->whereDate('check_in_time', Carbon::today())->latest()->first();
-        $this->page['workSessions'] = $worker?->workSessions()->orderBy('created_at', 'desc')->paginate($workSessionHistoryItemsPerPage);
+        $this->page['workSessions'] = $worker?->workSessions()->orderBy('check_in_time', 'desc')->paginate($workSessionHistoryItemsPerPage);
     }
 
     public function onSearch() {
